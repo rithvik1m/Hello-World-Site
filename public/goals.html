@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>My Goals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,16 +16,41 @@
     </div>
 </nav>
 
-<section>
+<section class="slide-in-left">
     <h1>MacBook Mission 💻</h1>
     <p>Goal: Earn $994 to buy the 2025 MacBook.</p>
+</section>
 
+<section class="card slide-in-right">
+    <h2>How I’ll Achieve It</h2>
     <ul>
         <li>Build websites</li>
         <li>Win photography competitions</li>
         <li>Develop apps</li>
     </ul>
 </section>
+
+<script>
+const slideElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+
+const elementInView = (el, offset = 0) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+};
+
+const displaySlideElement = (el) => el.classList.add('slide-in-visible');
+
+const handleScrollAnimation = () => {
+    slideElements.forEach((el) => {
+        if (elementInView(el, 100)) displaySlideElement(el);
+    });
+};
+
+window.addEventListener('scroll', handleScrollAnimation);
+window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 
 </body>
 </html>

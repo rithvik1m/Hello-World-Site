@@ -1,10 +1,19 @@
+/* Body & Fonts */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     background: #f4f6f9;
     color: #333;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
+/* Headings */
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+p, li { font-size: 1.2rem; }
+
+/* Navbar */
 nav {
     background: #111;
     color: white;
@@ -12,40 +21,60 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    transition: background 0.3s;
 }
-
+nav.scrolled { background: #222; }
 nav a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    transition: color 0.3s;
 }
+nav a:hover { color: #4CAF50; }
 
-nav a:hover {
-    color: #4CAF50;
-}
-
+/* Hero section */
 .hero {
     text-align: center;
     padding: 60px 20px;
 }
-
 .hero img {
     width: 400px;
     border-radius: 15px;
     margin-top: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.hero img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-section {
+/* Cards */
+.card {
     padding: 50px;
-    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+/* Slide-in animations */
+.slide-in-left, .slide-in-right {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+.slide-in-visible {
+    opacity: 1;
+    transform: translateX(0) !important;
 }
 
-li {
-    margin: 10px 0;
-    font-size: 18px;
-}
+/* Lists */
+ul { list-style: none; padding: 0; }
+li { margin: 10px 0; }
