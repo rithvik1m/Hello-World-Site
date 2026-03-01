@@ -13,5 +13,14 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rithvik1m/Hello-World-Site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rithvik1m/Hello-World-Site/issues"
+  },
+  "homepage": "https://github.com/rithvik1m/Hello-World-Site#readme"
 }
