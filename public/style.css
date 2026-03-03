@@ -1,80 +1,77 @@
-/* Body & Fonts */
 body {
     margin: 0;
-    font-family: 'Poppins', Arial, sans-serif;
-    background: #f4f6f9;
-    color: #333;
-    font-size: 18px;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
-/* Headings */
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; }
-p, li { font-size: 1.2rem; }
-
-/* Navbar */
+/* NAVBAR */
 nav {
-    background: #111;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
     position: sticky;
     top: 0;
-    transition: background 0.3s;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
 }
-nav.scrolled { background: #222; }
+
 nav a {
     color: white;
+    margin: 0 20px;
     text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
+    font-size: 18px;
 }
-nav a:hover { color: #4CAF50; }
 
-/* Hero section */
-.hero {
+nav a:hover {
+    color: #00ffcc;
+}
+
+/* SECTIONS */
+section {
+    padding: 120px 20px;
     text-align: center;
-    padding: 60px 20px;
 }
+
+/* HERO IMAGE */
 .hero img {
-    width: 400px;
-    border-radius: 15px;
+    width: 200px;
+    border-radius: 50%;
     margin-top: 20px;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.4s ease;
 }
+
 .hero img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    transform: scale(1.1);
 }
 
-/* Cards */
+/* CARD STYLE */
 .card {
-    padding: 50px;
-    margin: 20px auto;
-    max-width: 600px;
     background: white;
+    margin: 40px auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-.card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
 }
 
-/* Slide-in animations */
-.slide-in-left, .slide-in-right {
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ANIMATIONS */
+.slide-in-left,
+.slide-in-right {
     opacity: 0;
+    transform: translateX(100px);
     transition: all 0.8s ease-out;
 }
-.slide-in-visible {
-    opacity: 1;
-    transform: translateX(0) !important;
+
+.slide-in-left {
+    transform: translateX(-100px);
 }
 
-/* Lists */
-ul { list-style: none; padding: 0; }
-li { margin: 10px 0; }
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
