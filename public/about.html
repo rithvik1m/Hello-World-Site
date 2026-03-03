@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About Me</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>About - Rithvik1M</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-    <h2>Rithvik1M</h2>
-    <div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="goals.html">Goals</a>
-    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="goals.html">Goals</a>
 </nav>
 
 <section class="slide-in-left">
     <h1>About Me</h1>
-    <p>I build websites, apps, and compete in photography competitions.</p>
+    <p>I build websites, develop apps, and compete in photography competitions.</p>
 </section>
 
 <section class="card slide-in-right">
@@ -33,27 +29,6 @@
     </ul>
 </section>
 
-<script>
-const slideElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
-
-const elementInView = (el, offset = 0) => {
-    const elementTop = el.getBoundingClientRect().top;
-    return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
-};
-
-const displaySlideElement = (el) => el.classList.add('slide-in-visible');
-
-const handleScrollAnimation = () => {
-    slideElements.forEach((el) => {
-        if (elementInView(el, 100)) displaySlideElement(el);
-    });
-};
-
-window.addEventListener('scroll', handleScrollAnimation);
-window.addEventListener('scroll', () => {
-    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
